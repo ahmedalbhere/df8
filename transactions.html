@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>سجل - المعاملات</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1><i class="fas fa-exchange-alt"></i> سجل</h1>
+      <p>سجل المعاملات المالية</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-btn active" id="all-tab">الكل</button>
+      <button class="tab-btn" id="income-tab">مدخول</button>
+      <button class="tab-btn" id="expense-tab">مصروف</button>
+    </div>
+
+    <form id="transaction-form" class="transaction-form">
+      <div class="form-group">
+        <select id="type" required>
+          <option value="">اختر النوع</option>
+          <option value="income">مدخول</option>
+          <option value="expense">مصروف</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="number" id="amount" placeholder="المبلغ (جنيه)" required>
+      </div>
+      <div class="form-group">
+        <input type="text" id="note" placeholder="الوصف (اختياري)">
+      </div>
+      <div class="form-group">
+        <select id="category" required>
+          <option value="">اختر الفئة</option>
+          <option value="salary">راتب</option>
+          <option value="investment">استثمار</option>
+          <option value="gift">هدية</option>
+          <option value="other-income">أخرى (مدخول)</option>
+          <option value="food">طعام</option>
+          <option value="transport">مواصلات</option>
+          <option value="bills">فواتير</option>
+          <option value="shopping">تسوق</option>
+          <option value="other-expense">أخرى (مصروف)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <input type="date" id="date" required>
+      </div>
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-plus"></i> إضافة معاملة
+      </button>
+    </form>
+
+    <div class="transactions-container">
+      <div class="search-filter">
+        <input type="text" id="search-input" placeholder="ابحث في المعاملات...">
+        <select id="month-filter">
+          <option value="">كل الشهور</option>
+          <option value="1">يناير</option>
+          <option value="2">فبراير</option>
+          <option value="3">مارس</option>
+          <option value="4">أبريل</option>
+          <option value="5">مايو</option>
+          <option value="6">يونيو</option>
+          <option value="7">يوليو</option>
+          <option value="8">أغسطس</option>
+          <option value="9">سبتمبر</option>
+          <option value="10">أكتوبر</option>
+          <option value="11">نوفمبر</option>
+          <option value="12">ديسمبر</option>
+        </select>
+      </div>
+
+      <div id="transaction-list" class="transaction-list"></div>
+    </div>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item">
+        <i class="fas fa-chart-pie"></i>
+        <span>الإحصائيات</span>
+      </a>
+      <a href="transactions.html" class="nav-item active">
+        <i class="fas fa-exchange-alt"></i>
+        <span>المعاملات</span>
+      </a>
+      <a href="debts.html" class="nav-item">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>الديون</span>
+      </a>
+      <a href="reports.html" class="nav-item">
+        <i class="fas fa-file-alt"></i>
+        <span>التقارير</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="transactions.js"></script>
+</body>
+</html>
