@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>سجل - التقارير</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <header class="app-header">
+      <h1><i class="fas fa-file-alt"></i> سجل</h1>
+      <p>تقارير مالية مفصلة</p>
+    </header>
+
+    <div class="report-controls">
+      <select id="report-type">
+        <option value="monthly">تقرير شهري</option>
+        <option value="category">تقرير حسب الفئة</option>
+        <option value="yearly">تقرير سنوي</option>
+      </select>
+      <input type="month" id="report-month" value="">
+    </div>
+
+    <div class="report-container">
+      <div class="chart-report">
+        <canvas id="reportChart"></canvas>
+      </div>
+
+      <div class="table-report">
+        <table id="report-table">
+          <thead>
+            <tr>
+              <th>الفئة</th>
+              <th>المبلغ</th>
+              <th>النسبة</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="report-summary">
+      <div class="summary-card">
+        <h3>إجمالي المدخول</h3>
+        <div class="amount" id="report-income">0 جنيه</div>
+      </div>
+      <div class="summary-card">
+        <h3>إجمالي المصروف</h3>
+        <div class="amount" id="report-expense">0 جنيه</div>
+      </div>
+      <div class="summary-card">
+        <h3>صافي الرصيد</h3>
+        <div class="amount" id="report-balance">0 جنيه</div>
+      </div>
+    </div>
+
+    <button class="export-btn" id="export-pdf">
+      <i class="fas fa-file-pdf"></i> تصدير PDF
+    </button>
+
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item">
+        <i class="fas fa-chart-pie"></i>
+        <span>الإحصائيات</span>
+      </a>
+      <a href="transactions.html" class="nav-item">
+        <i class="fas fa-exchange-alt"></i>
+        <span>المعاملات</span>
+      </a>
+      <a href="debts.html" class="nav-item">
+        <i class="fas fa-hand-holding-usd"></i>
+        <span>الديون</span>
+      </a>
+      <a href="reports.html" class="nav-item active">
+        <i class="fas fa-file-alt"></i>
+        <span>التقارير</span>
+      </a>
+    </nav>
+  </div>
+
+  <script src="reports.js"></script>
+</body>
+</html>
